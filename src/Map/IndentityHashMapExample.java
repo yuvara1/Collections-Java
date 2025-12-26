@@ -4,7 +4,7 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 
 public class IndentityHashMapExample {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         IdentityHashMap<String, Integer> map = new IdentityHashMap<>();
         String k1 = new String("key");
         String k2 = new String("key"); // equal but different identity
