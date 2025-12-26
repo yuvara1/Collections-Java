@@ -18,10 +18,10 @@ public class Main {
     static class NameThenAgeComparator implements Comparator<Student> {
         @Override
         public int compare(Student a, Student b) {
-            int nameCmp = String.CASE_INSENSITIVE_ORDER.compare(a.name, b.name);
+            int nameCmp = String.CASE_INSENSITIVE_ORDER.compare(a.getName(), b.getName());
 //            System.out.println(STR."Comparing \{" + a + "} and \{" + b + "}, nameCmp=" + nameCmp);
             if (nameCmp != 0) return nameCmp;
-            return Integer.compare(a.age, b.age);
+            return Integer.compare(a.getAge(), b.getAge());
         }
     }
 
@@ -59,8 +59,8 @@ public class Main {
         students.add(new Student("arun", 19));
 
         // By age then by name (case-insensitive)
-        students.sort(Comparator.comparingInt((Student s) -> s.age)
-                .thenComparing(s -> s.name, String.CASE_INSENSITIVE_ORDER));
+        students.sort(Comparator.comparingInt((Student s) -> s.getAge())
+                .thenComparing(s -> s.getName(), String.CASE_INSENSITIVE_ORDER));
         System.out.println(STR."Students by age then name (case-insensitive): \{students}");
 
         // By name (case-insensitive) then age using named comparator
@@ -68,9 +68,9 @@ public class Main {
         System.out.println("Students by name then age (case-insensitive): " + students);
 
         // By name descending (case-insensitive) then age
-        students.sort(Comparator.comparing((Student s) -> s.name, String.CASE_INSENSITIVE_ORDER)
+        students.sort(Comparator.comparing((Student s) -> s.getName(), String.CASE_INSENSITIVE_ORDER)
                 .reversed()
-                .thenComparingInt(s -> s.age));
+                .thenComparingInt(s -> s.getAge()));
         System.out.println("Students by name desc then age: " + students);
 
     }

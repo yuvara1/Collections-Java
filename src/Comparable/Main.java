@@ -22,6 +22,7 @@ public class Main {
         Iterator<Movie> iterator = movieList.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
+
         }
     }
 
