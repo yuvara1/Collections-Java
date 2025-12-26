@@ -49,4 +49,5 @@ public class Movie implements Comparable<Movie> {
     public String toString() {
         return STR."Movie { \n\t\t movieId : \{movieId},\n\t\t movieName : '\{movieName}',\n\t\t rating : \{rating},\n\t\t releaseDate : \{releaseDate.getDate() + "/" + releaseDate.getMonth() + "/" + releaseDate.getYear()},\n\t\t budget : \{String.format(Locale.UK, "%.0f", budget)},\n\t\t boxOfficeCollection : \{String.format(Locale.UK, "%.0f", boxOfficeCollection)}, actors : \{String.join(", ", actors)}, director : '\{director}', genre : '\{genre}'\n\t}";
     }
+    // Getters and Setters
 }
